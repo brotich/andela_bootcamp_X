@@ -15,10 +15,10 @@ class PrimeNumbers(object):
         """
         
         if not isinstance(n, int):
-            raise TypeError("only integers expected input to function,current type "+str(isinstance(n)))
+            raise TypeError("only integers expected input ")
         
         if n < 1:
-            raise ValueError("Expected positive integers 1 or more, current parameter \""+str(n)+"\"")
+            raise ValueError("Expected int > 1 ")
         
         if n == 1:
             return []
@@ -40,6 +40,6 @@ class PrimeNumbers(object):
         return prime_numbers
 
 if __name__ == '__main__':
-    n = 10
+    n = 20
     print PrimeNumbers().prime(n)
 
