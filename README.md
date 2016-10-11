@@ -1,4 +1,23 @@
-#Andela Cohort X
+# Andela Cohort X
+The  path to a world-class developer facilitated by [Andela Kenya](https://andela.com) . This repository contains the programs and snippets 
+I wrote during the Andela Cohort X from 7th Oct 2016
 
-start of  path a world class developer facilited by Andela Kenya
-https://andela.com/
+## Organization of the Repository
+* [```andela_labs```](https://github.com/whiteviel/andela_bootcamp/tree/staging/andela_labs) contains the code and tests for the 
+assignments on [Andela labs](http://labs.andela.com)
+* Folder with prefix ```Outcome_``` are assignments from the Learning Map for which the solutions were to be submitted to GitHub
+
+## Organization of ```Outcome_``` Folders
+
+* Day 1 : 
+[```FizzBuzz(Programming Logic)```](https://github.com/whiteviel/andela_bootcamp/tree/staging/andela_labs/FizzBuzz%20(Programming%20Logic)) ,
+[```Car Class Lab (OOP)```](https://github.com/whiteviel/andela_bootcamp/tree/staging/andela_labs/Car%20Class%20Lab%20(OOP)),
+[```DataTypes Lab(Programming Logic)```](), [```GitHub Task: Real Life Model Based on OOP```](https://github.com/whiteviel/andela_bootcamp/tree/staging/Outcome%204%20-%20Object-Oriented%20Programming)
+
+* Day 2: 
+[```Word Count (Programming Logic)```](https://github.com/whiteviel/andela_bootcamp/tree/staging/andela_labs/Word%20Count%20(Programming%20Logic)), 
+[```Max and Min Number (Programming Logic)```](https://github.com/whiteviel/andela_bootcamp/tree/staging/andela_labs/Max%20and%20Min%20Number%20(Programming%20Logic)), 
+[```HTTP & the Web```](https://github.com/whiteviel/andela_bootcamp/tree/staging/Outcome%207%20-%20HTTP%20and%20Web%20Services)
+
+
+
