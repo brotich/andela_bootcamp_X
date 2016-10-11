@@ -41,7 +41,7 @@ if __name__ == '__main__':
         print "     ", sys.argv[0], " university_name [country]"
         print "         the country is optional"
         print ""
-        print "default outpur using Country Kenya shown below: \n\n"
+        print "default output using Country Kenya shown below: \n\n"
 
     Main().find_university(university_name, country_name)
 
