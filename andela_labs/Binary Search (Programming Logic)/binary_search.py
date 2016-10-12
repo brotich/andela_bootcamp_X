@@ -1,6 +1,6 @@
 class BinarySearch(list):
     """
-
+        Searches for an item in a list
     """
 
     def __init__(self, a, b):
@@ -9,41 +9,46 @@ class BinarySearch(list):
         self.step = b
 
     def __getitem__(self, index):
+        """
+            return the value of the item at position index of the list
+            :parameter index the index to find
+            :returns the item
+        """
         return (index + 1) * self.step
 
-    def search(self, value):
+    def search(self, item):
+        """
+            finds an item in the list using binary search
+            :parameter item the value to search for in the list
+            :returns dict with keys index => location of item or -1 if not found
+                                    count => number of times the array was accesed
+       """
 
-        start = 0
-        end = self.length - 1
+        first = 0
+        last = self.length - 1
         found = False
 
+        index = -1
         count = 0
-        found_index = -1
 
-        while start <= end and not found:
-            mid_point = (start + end) / 2
+        while first <= last and not found:
+            midpoint = (first + last) / 2
 
-            num = self.__getitem__(mid_point)
+            if item == 10000:
+                print self.__getitem__(midpoint) 
 
-            if num == value:
-                found = True
-                found_index = mid_point
+            if not (self.__getitem__(midpoint) - item ) % self.step == 0: #item not multiple exit
                 break
+
+            if self.__getitem__(midpoint) == item:
+                found = True
+                index = midpoint
             else:
-                if num > value:
-                    end = mid_point - 1
+                if item < self.__getitem__(midpoint):
+                    last = midpoint - 1
                 else:
-                    start = mid_point + 1
+                    first = midpoint + 1
             count += 1
+        
 
-        return {'count': count, 'index': found_index}
-
-
-d = BinarySearch(100, 10)
-
-num = 10000
-
-
-
-print "index: ", d.search(num)['index']
-print "count: ", d.search(num)['count']
+        return {"index": index, "count": count}
