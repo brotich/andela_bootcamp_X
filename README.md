@@ -19,5 +19,8 @@ coding on [Andela labs](http://labs.andela.com)
 [```Max and Min Number (Programming Logic)```](https://github.com/whiteviel/andela_bootcamp/tree/staging/andela_labs/Max%20and%20Min%20Number%20(Programming%20Logic)), 
 [```GitHub Task: API task```](https://github.com/whiteviel/andela_bootcamp/tree/staging/Outcome%207%20-%20HTTP%20and%20Web%20Services)
 
+* Day 3: [```Outcome 8 - Front-End Development```](https://github.com/whiteviel/andela_bootcamp/tree/staging/Outcome%208%20-%20Front-End%20Development)
+
+
 
 
