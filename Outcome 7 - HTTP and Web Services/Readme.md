@@ -1,10 +1,9 @@
-# Day 2 : Outcome 7 - HTTP and Web Services
+## Day 2 : Outcome 7 - HTTP and Web Services
 
-This program is submitted as the solution to the Day 2 Github assignment . 
-This assignment  is designed to impact knowledge on HTTP and API use to a developer
+This assignment  facilitates  a developer to gain knowledge on HTTP request cycle. It also provides a platform for a developer to learn about the use of APIs
 
-## The Solution
-the breakdown of the solution is as follows:
+### The Solution
+The structure of the solution:
 ```
     lib
       +
@@ -13,25 +12,25 @@ the breakdown of the solution is as follows:
       +
     university_search.py
 ```
-```lib``` folder containing the file ```lib.py```, ```__init__.py```
 
-```lib.py``` contains the code to connect to the API and print the response to the console
+```lib.py``` contains the functions to connect to an API and print the response to the console
 
-```university_search.py``` - entry point of the program. It initilialisess an instance of ```lib.py``` and  
-access the methods to get and display the information
+```university_search.py```  forms entry point of the program and creates an instance of ```lib.py``` . 
+The`lib.get_universties_list`  function  to get data from the internet while the `lib.padded_print` function displays the information on the console
 
 
-## THE API 
-The API selected provides information on University Domains and Names Data List & API. It allows 
-the data to be filtered based on partial ```name``` and/or ```country``` . 
-It provides one URL endpoint [```/search```](http://universities.hipolabs.com/search) for accessing the resource . 
-The parameters are sent as HTTP GET  queries to the endpoint. The response from the API is a JSON file containing
-a list of a university data . Homepage at [http://universities.hipolabs.com](http://universities.hipolabs.com/).
+### THE API : http://universities.hipolabs.com
+***
+The API provides information on universities names and internet domains. The response may be filtered  based on partial university ```name``` and/or  ```country``` . 
+
+The API provides one URL endpoint [```/search```](http://universities.hipolabs.com/search) for accessing the resource . 
+
+ The response is filtered by sending `name` and/or `country` as HTTP GET queries to the endpoint. The API response is a JSON file containing a list of a university data . Homepage located at  [http://universities.hipolabs.com](http://universities.hipolabs.com/).
 
 
 #### sample query
 * [http://universities.hipolabs.com/search?name=middle&country=Turkey](http://universities.hipolabs.com/search?name=middle&country=Turkey)
-  : get universities with ```middle``` in the name  and located in ```Turkey```
+  : get universities with partial name ```middle```  and located in ```Turkey```
   
 * [http://universities.hipolabs.com/search?country=Kenya](http://universities.hipolabs.com/search?country=Kenya)
   : get all universities  and located in ```Kenya```
@@ -39,7 +38,6 @@ a list of a university data . Homepage at [http://universities.hipolabs.com](htt
 #### sample response
 ```
 [
-    ...
     {
         "alpha_two_code": "TR",
         "country": "Turkey",
@@ -52,41 +50,15 @@ a list of a university data . Homepage at [http://universities.hipolabs.com](htt
 ```
 
 ## Usage
-requires the ```requests``` package 
+The program requires the ```requests``` package 
   
-      ```python university_search.py university_name [country] ```
+  	python university_search.py university_name [country] 
 
-The script expects a full/partial name and an optional country name to obtain the data
-Note: Running the script without any arguments defaults to hardcoded parameters: Country = Kenya and an empty University Name 
+The script expects a full/partial name and an optional country to display the information to the console
+*Note*: Running the script without any arguments defaults to hard coded parameters: Country = Kenya and an empty University Name 
 
 ## sample output
-
-```
-usage:
-      university_search.py  university_name [country]
-         the country is optional
-
-default output using Country Kenya shown below: 
-
-
- ||============================================================================================================|| 
- ||                             Name                              |   Country   |            Domain            || 
- ||============================================================================================================|| 
- ||  Africa International University                               |  Kenya      |  aiu.ac.ke                  || 
- ||------------------------------------------------------------------------------------------------------------|| 
- ||  Aga Khan University                                           |  Kenya      |  aku.edu                    || 
- ||------------------------------------------------------------------------------------------------------------|| 
- ||  Africa Nazarene University                                    |  Kenya      |  anu.ac.ke                  || 
- ||------------------------------------------------------------------------------------------------------------|| 
- ||  Adventist University of Africa                                |  Kenya      |  aua.ac.ke                  || 
- ||------------------------------------------------------------------------------------------------------------|| 
- ||  Chuka University                                              |  Kenya      |  chuka.ac.ke                || 
- ||------------------------------------------------------------------------------------------------------------|| 
- ||  Catholic University of Eastern Africa                         |  Kenya      |  cuea.edu                   || 
- ||------------------------------------------------------------------------------------------------------------|| 
-
-
-```
+![Sample Program output](./screenshot.png) 
 
 
 

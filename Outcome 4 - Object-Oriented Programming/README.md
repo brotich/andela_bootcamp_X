@@ -1,28 +1,42 @@
-#Outcome 4 - Object-Oriented Programming
+## Day 1: Outcome 4 - Object-Oriented Programming
 
-Real World Problem modeled using OOP principles:
+Real World Problem modeled using OOP principles. The model is based on the various formulae of calculation land rates in a sample municipality.
 
-#Inheritance
-The classes CommercialBuilding, ResidentialBuilding and UtilityBuilding are subclass of the BaseBuilding class
+The formulae for calculating land-rate  are:
 
-#abstraction
-The building have different formula for calculatining the land rate to pay to the municipal i.e
-  CommercialBuilding = 30 units per floorspace
-  ResidentialBuilding = 10 units per unit
-  UtilityBuilding = 0 (buildings owned by the municipality don't pay rates)
+```
++===========================================================+
+||  Type Of Building      |         Land Rate              ||
+|===========================================================|
+| Commercial              | KES 30 per floor+space unit     |
++-----------------------------------------------------------+
+| Residential             | KES 10  per housing unit        |
++-----------------------------------------------------------+
+| Utility                 | 0(Municipal owned are rate free)|
++-----------------------------------------------------------+
+| Uncategorized           | KES 500(Flat Rate)              |
++-------------------------+---------------------------------+
+                                    created on asciiflow.com
+```
 
-#polymorphism
-The classes CommercialBuilding, ResidentialBuilding and UtilityBuilding are subclass of the BaseBuilding class 
-However each class defines unique attributes and behaviors to the particular building class i.e
-  CommercialBuilding have floorspace
-  ResidentialBuilding have units
-  UtilityBuilding define the utility it provides
+  
+The [`tests`](./tests) folder contains the tests used in the development of the classes using TDD format
+##Applied Basic OOP principles
 
-#encapsulation 
-the calculation of rate is dependent on the class of the building. It is not important to display the formula
-used to calculate the rate hence the calculated rate is expose via get_land_rate method in the subclasses. It also
-allows for the use of different formula based on the type of the building
+#### Inheritance ###
+* The classes ```CommercialBuilding```, `ResidentialBuilding` and ```UtilityBuilding``` are subclasses of the ```BaseBuilding``` class.
 
-#events
-this allows for the communication between the instances of related classes. This wasn't implemented in this 
-model however
+#### abstraction
+* Each class of buildings has a different formula for calculating the land rate to pay to the municipal as per the table above. The exact implementation is hidden behind the ```get_land_rate``` function of the subclass.
+
+#### polymorphism
+* The classes  ```CommercialBuilding```, ```ResidentialBuilding``` and ```UtilityBuilding```  inherit the attributes and behaviour of the super class ```BaseBuilding``` . However, each individual class define some  unique attributes and behaviors to that  particular building class i.e:
+  :  - CommercialBuilding has floorspace
+  :  - ResidentialBuilding has living units
+  :  - UtilityBuilding defines the utility it provides
+
+#### encapsulation 
+* Some of the attributes in the `BaseBuilding` class and its sub-classes are private to that particular instance. These attributes are therefore manipulated using getter and setter functions. i.e `set_location` and [`get_location`](types_buildings.py#L34) functions are used to manipulate the value of `self.__location` attribute in an instance of the classes.
+
+#### events
+* This allows for the communication between the instances of classes. This was, however,  not implemented in this model 
