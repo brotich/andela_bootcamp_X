@@ -26,29 +26,39 @@ class BinarySearch(list):
 
         first = 0
         last = self.length - 1
-        found = False
+
+        #check edge cases of the values
+        if item < self.__getitem__(first) or item > self.__getitem__(last) :
+            return {"index": -1, "count": 0}
+
+        #check start and end list for match
+        if item == self.__getitem__(last):
+            return {"index": last, "count": 0}
+        if item == self.__getitem__(first):
+            return {"index": first, "count": 0}
 
         index = -1
         count = 0
 
-        while first <= last and not found:
+        first = 0
+
+        while first <= last:
             midpoint = (first + last) / 2
 
-            if item == 10000:
-                print self.__getitem__(midpoint) 
-
-            if not (self.__getitem__(midpoint) - item ) % self.step == 0: #item not multiple exit
-                break
+            if item == 40:
+                    print "item: ", self.__getitem__(midpoint)
 
             if self.__getitem__(midpoint) == item:
-                found = True
                 index = midpoint
+                break
+
+            elif not (self.__getitem__(midpoint) - item ) % self.step == 0: #item not multiple exit
+                break
             else:
                 if item < self.__getitem__(midpoint):
                     last = midpoint - 1
                 else:
                     first = midpoint + 1
-            count += 1
-        
+            count += 1   
 
         return {"index": index, "count": count}
